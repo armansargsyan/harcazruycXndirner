@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .result{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-height: 500px;
+        }
+        .numbers{
+            display: none;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .arrays{
+            display: none;
+        }
+        form{
+            margin: 10px;
+        }
+        p{
+            margin-right: 50px;
+        }
+        p > input{
+            width: 35px;
+            text-align: center;
+        }
+        th > input {
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<button onclick="pages(this)" data-page="numbers">Թիվ</button>
+<button onclick="pages(this)" data-page="arrays">Մասիվ</button>
+<div class="numbers">
+    <form class="fibonachi" onsubmit="fibonachi(); return false">
+        Ֆիբոնաչչի
+        <input type="number" class="fibonachi" required>
+        <button type="submit">Գտնել</button>
+    </form>
+    <form class="parzTver" onsubmit="parzTver(); return false">
+        Պարզ թվեր
+        <input type="number" class="parzTver" min="2" required>
+        <button type="submit">Գտնել</button>
+    </form>
+    <form class="palindrome" onsubmit="palindrome(); return false">
+        Պոլինդրոմ
+        <input type="number" class="palindrome" min="0" required>
+        <button type="submit">Գտնել</button>
+    </form>
+</div>
+
+<div class="arrays">
+    <form onsubmit="array();return false">
+    <p><input type="number" class="cols" placeholder="N" min="1"></p>
+    <p><input type="number" class="rows" placeholder="M" min="1"></p>
+    <p><button type="submit">Առաջ</button></p>
+    </form>
+    <div class="array"></div>
+</div>
+
+<div class="result"></div>
+</body>
+<script src="script.js"></script>
+</html>
